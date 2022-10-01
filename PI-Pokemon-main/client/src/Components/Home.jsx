@@ -2,50 +2,53 @@ import React from 'react'
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { getPokemons, filterByType, filteryByCreation } from '../Actions';
+import { getPokemons, filterByType, filteryByCreation, order } from '../Actions';
 import Card from './Card';
 import Pag from './Pag';
 
 const Home = () => {
   const dispatch = useDispatch();
   const allPokemons = useSelector((state) => state.pokemons);
+  const [ordenado, setOrdernado] = useState('');
   const [pag, setPag] = useState(1);
   const [pokemonsPerPage, setPokemonsPerPage] = useState(12)
   const lastPokemon = pag * pokemonsPerPage
   const firstPokemon = lastPokemon - pokemonsPerPage
-  const currentPokemons = allPokemons.slice(firstPokemon, lastPokemon) 
+  const currentPokemons = allPokemons.slice(firstPokemon, lastPokemon)
 
-const paginado = (number) => {
-    setPag (number)
+  const paginado = (number) => {
+    setPag(number)
   }
 
- useEffect(() => {
-  dispatch(getPokemons());
-},[dispatch])
-  
+  useEffect(() => {
+    dispatch(getPokemons());
+  }, [dispatch])
+
   function handleClick(e) {
     e.preventDefault();
     dispatch(getPokemons());
   }
 
-  function handleFilterByType(e){
+  function handleFilterByType(e) {
     dispatch(filterByType(e.target.value));
   }
 
-  function handleFilterByCreation(e){
+  function handleFilterByCreation(e) {
     dispatch(filteryByCreation(e.target.value))
+  }
+
+  function handleOrder(e){
+    dispatch(order(e.target.value))
+    setPag(1)
+    setOrdernado(`Ordenado${e.target.value}`)
   }
 
   return (
     <div>
       <Link to='/pokemons'> Crear Pokemon </Link>
       <h1> PokeFind </h1>
-      <button onClick={e =>  handleClick(e) }> Volver a cargar todos los pokemons</button>
+      <button onClick={e => handleClick(e)}> Volver a cargar todos los pokemons</button>
       <div>
-        <select>
-          <option>A-Z</option>
-          <option>Z-A</option>
-        </select>
         <select onChange={e => handleFilterByType(e)}>
           <option value="All">All</option>
           <option value="normal">Normal</option>
@@ -70,28 +73,33 @@ const paginado = (number) => {
           <option value="shadow">Shadow</option>
         </select>
         <select onChange={e => handleFilterByCreation(e)}>
-          <option value = "All">All</option>
-          <option value = "Api">Already Exist</option>
-          <option value = "Created">Created by you</option>
+          <option value="All">All</option>
+          <option value="Api">Already Exist</option>
+          <option value="Created">Created by you</option>
         </select>
         <select>
-          <option>Attack</option>
+          <option>A-Z</option>
+          <option>Z-A</option>
+        </select>
+        <select onChange={e => handleOrder(e)}>
+          <option value="max">➕Attack</option>
+          <option value="min">➖Attack</option>
         </select>
         <Pag
-        pokemonsPerPage={pokemonsPerPage}
-        allPokemons={allPokemons.length}
-        paginado={paginado}
+          pokemonsPerPage={pokemonsPerPage}
+          allPokemons={allPokemons.length}
+          paginado={paginado}
         />
         {
           currentPokemons?.map(e =>
             <Link to={'/detail/' + e.id} key={e.id}>
-            <Card
-            key={e.id}
-            id={e.id}
-            name={e.name}
-            img={e.img}
-            types={e.types}
-            />
+              <Card
+                key={e.id}
+                id={e.id}
+                name={e.name}
+                img={e.img}
+                types={e.types}
+              />
             </Link>
           )
         }

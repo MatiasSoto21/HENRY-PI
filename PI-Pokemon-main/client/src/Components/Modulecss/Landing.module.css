@@ -1,14 +1,35 @@
 
-/* .landing {
-    background-image: url("https://clickwallpapers.net/wp-content/uploads/2022/06/clickwallpapers-pokemon-4k-img2-scaled-1.jpg");
+.landing {
+   position: absolute;
+   top: 50px;
+   left: 150px;
+   width: 500px;
+   height: 100px;
 
 }
- */
-.landing h1{
+
+.container h1{
     color: green;
+    background-color: blue;
     
 }
 
-.landing button{
+.container button{
+    position: absolute;
     background-color: aqua;
+    bottom: 0;
+}
+
+/* .container img{
+    z-index: 0;
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+} */
+.container{
+    width: 100%;
+    background-size: cover;
+    height: 100vh;
+    background-image: url("https://clickwallpapers.net/wp-content/uploads/2022/06/clickwallpapers-pokemon-4k-img2-scaled-1.jpg")
 }

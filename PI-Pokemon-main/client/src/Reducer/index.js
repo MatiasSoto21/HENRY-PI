@@ -1,4 +1,4 @@
-import { GET_ALL_POKEMONS, FILTER_BY_TYPE, FILTER_BY_CREATION } from "../Actions";
+import { GET_ALL_POKEMONS, FILTER_BY_TYPE, FILTER_BY_CREATION, ORDER_BY_ATTACK } from "../Actions";
 
 const initialState = {
     pokemons: [],
@@ -16,10 +16,7 @@ const rootReducer = (state = initialState, action) => {
             }
         case FILTER_BY_TYPE:
             const allPokemon = state.allPokemons
-            const filterType = action.payload === "All" ? allPokemon :
-                allPokemon.filter(pokemon => pokemon.types.find(e => e.name === action.payload))
-                console.log(action.payload)
-            console.log(filterType)
+            const filterType = action.payload === "All" ? allPokemon : allPokemon.filter(pokemon => pokemon.types.find(e => e.name === action.payload))
             return {
                 ...state,
                 pokemons: filterType
@@ -30,7 +27,23 @@ const rootReducer = (state = initialState, action) => {
             return {
                 ...state,
                 pokemons: action.payload === 'All' ? state.allPokemons : filterByCreation
-            }    
+            }
+        case ORDER_BY_ATTACK:
+            const allPokemon3 = state.allPokemons
+            const orderByAttack = action.payload === 'min' ? allPokemon3.sort(function (a, b) {
+                if (a.attack > b.attack) return 1;
+                if (b.attack > a.attack) return -1;
+                return 0;
+            }) :
+            allPokemon3.sort(function (a, b) {
+                    if (a.attack > b.attack) return -1;
+                    if (b.attack > a.attack) return  1;
+                    return 0;
+                })
+            return {
+                ...state,
+                pokemons: orderByAttack
+            }
         default:
             return state
     }
