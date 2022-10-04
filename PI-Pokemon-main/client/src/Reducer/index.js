@@ -1,8 +1,9 @@
-import { GET_ALL_POKEMONS, FILTER_BY_TYPE, FILTER_BY_CREATION, ORDER_BY_ATTACK } from "../Actions";
+import { GET_ALL_POKEMONS, FILTER_BY_TYPE, FILTER_BY_CREATION, ORDER_BY_ATTACK, GET_POKEMON_NAME, ORDER_BY_NAME, GET_TYPES,POST_POKEMON } from "../Actions";
 
 const initialState = {
     pokemons: [],
-    allPokemons: []
+    allPokemons: [],
+    types: []
 }
 
 
@@ -14,6 +15,15 @@ const rootReducer = (state = initialState, action) => {
                 pokemons: action.payload,
                 allPokemons: action.payload
             }
+        case GET_TYPES   :
+            return {
+                ...state,
+                types: action.payload
+            }
+        case POST_POKEMON:
+            return {
+                ...state
+            }     
         case FILTER_BY_TYPE:
             const allPokemon = state.allPokemons
             const filterType = action.payload === "All" ? allPokemon : allPokemon.filter(pokemon => pokemon.types.find(e => e.name === action.payload))
@@ -39,10 +49,33 @@ const rootReducer = (state = initialState, action) => {
                     if (a.attack > b.attack) return -1;
                     if (b.attack > a.attack) return  1;
                     return 0;
-                })
+                })        
             return {
                 ...state,
                 pokemons: orderByAttack
+            }
+
+        case GET_POKEMON_NAME:
+            return {
+                ...state,
+                pokemons: action.payload
+            }
+
+        case ORDER_BY_NAME:
+            const allPokemon4 = state.allPokemons
+            const orderByName = action.payload === 'A-Z' ? allPokemon4.sort(function (a,b){
+                if (a.name > b.name) return 1;
+                if (b.name > a.name) return -1;
+                return 0;
+            }) :
+            allPokemon4.sort(function (a, b) {
+                    if (a.name > b.name) return -1;
+                    if (b.name > a.name) return  1;
+                    return 0;
+            })
+            return {
+                ...state,
+                pokemons: orderByName
             }
         default:
             return state

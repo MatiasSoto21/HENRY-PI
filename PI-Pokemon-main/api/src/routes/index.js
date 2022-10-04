@@ -68,7 +68,7 @@ router.get('/pokemons', async (req, res) => {
     const name = req.query.name
     let allPokemons = await getAllPokemons();
     if (name) {
-        let pokemon = await allPokemons.filter(e => e.name.toLowerCase().includes(name.toLowerCase()))
+        let pokemon = await allPokemons.filter(e => e.name.toLowerCase() === (name.toLowerCase()))
         pokemon.length ?
             res.status(200).send(pokemon) :
             res.status(404).send('Pokemon no encontrado')
