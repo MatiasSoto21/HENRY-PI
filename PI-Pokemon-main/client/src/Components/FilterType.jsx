@@ -16,6 +16,7 @@ const FilterType = () => {
   return (
     <div> Filter by Type
         <select onChange={e => handleFilterByType(e)}>
+          <option value='All'>All</option>
             {types.map(e => 
               <option key={e.id} value={e.name}>{e.name[0].toUpperCase() + e.name.substring(1)}</option>)}
         </select>

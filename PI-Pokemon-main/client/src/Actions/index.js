@@ -8,6 +8,7 @@ export const ORDER_BY_ATTACK = 'ORDER';
 export const GET_POKEMON_NAME = 'GET_POKEMON_NAME';
 export const ORDER_BY_NAME = 'ORDER_BY_NAME';
 export const POST_POKEMON = 'POST_POKEMON';
+export const GET_DETAIL = 'GET_DETAIL';
 
 export function getPokemons() {
     return async function(dispatch){
@@ -24,6 +25,16 @@ export function getPokemonName (name){
         return await axios("http://localhost:3001/pokemons?name=" + name)
         .then(res => dispatch({
             type: GET_POKEMON_NAME,
+            payload: res.data
+        }))
+    }
+}
+
+export function getPokemonDetail(id) {
+    return async function(dispatch){
+        return await axios("http://localhost:3001/pokemons/" + id)
+        .then(res => dispatch({
+            type: GET_DETAIL,
             payload: res.data
         }))
     }
