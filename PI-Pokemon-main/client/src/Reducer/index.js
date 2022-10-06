@@ -1,4 +1,4 @@
-import { GET_ALL_POKEMONS, FILTER_BY_TYPE, FILTER_BY_CREATION, ORDER_BY_ATTACK, GET_POKEMON_NAME, ORDER_BY_NAME, GET_TYPES,POST_POKEMON, GET_DETAIL } from "../Actions";
+import { GET_ALL_POKEMONS, FILTER_BY_TYPE, FILTER_BY_CREATION, ORDER_BY_ATTACK, GET_POKEMON_NAME, ORDER_BY_NAME, GET_TYPES,POST_POKEMON, GET_DETAIL, CLEAN } from "../Actions";
 
 const initialState = {
     pokemons: [],
@@ -45,13 +45,12 @@ const rootReducer = (state = initialState, action) => {
                 pokemons: action.payload === 'All' ? state.allPokemons : filterByCreation
             }
         case ORDER_BY_ATTACK:
-            const allPokemon3 = state.allPokemons
-            const orderByAttack = action.payload === 'min' ? allPokemon3.sort(function (a, b) {
+            const orderByAttack = action.payload === 'min' ? state.pokemons.sort(function (a, b) {
                 if (a.attack > b.attack) return 1;
                 if (b.attack > a.attack) return -1;
                 return 0;
             }) :
-            allPokemon3.sort(function (a, b) {
+            state.pokemons.sort(function (a, b) {
                     if (a.attack > b.attack) return -1;
                     if (b.attack > a.attack) return  1;
                     return 0;
@@ -68,21 +67,26 @@ const rootReducer = (state = initialState, action) => {
             }
 
         case ORDER_BY_NAME:
-            const allPokemon4 = state.allPokemons
-            const orderByName = action.payload === 'A-Z' ? allPokemon4.sort(function (a,b){
-                if (a.name > b.name) return 1;
-                if (b.name > a.name) return -1;
+            const orderByName = action.payload === 'A-Z' ? state.pokemons.sort(function (a,b){
+                if (a.name.toLowerCase() > b.name.toLowerCase()) return 1;
+                if (b.name.toLowerCase() > a.name.toLowerCase()) return -1;
                 return 0;
             }) :
-            allPokemon4.sort(function (a, b) {
-                    if (a.name > b.name) return -1;
-                    if (b.name > a.name) return  1;
+            state.pokemons.sort(function (a, b) {
+                    if (a.name.toLowerCase() > b.name.toLowerCase()) return -1;
+                    if (b.name.toLowerCase() > a.name.toLowerCase()) return  1;
                     return 0;
             })
             return {
                 ...state,
                 pokemons: orderByName
             }
+
+        case CLEAN:
+            return {
+                ...state,
+                detail: []
+            }    
         default:
             return state
     }

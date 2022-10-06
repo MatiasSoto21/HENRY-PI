@@ -1,0 +1,16 @@
+.card{
+    border-radius: 50%;
+    background-color: rgb(240, 123, 123);
+    border: 5px solid white;
+    width: 300px;
+    text-align: center;
+    transition: 0.9s;
+}
+
+.card:hover{
+    transform: rotateX(360deg);
+}
+
+.types{
+    margin-bottom: 20px;
+}

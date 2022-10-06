@@ -9,6 +9,7 @@ export const GET_POKEMON_NAME = 'GET_POKEMON_NAME';
 export const ORDER_BY_NAME = 'ORDER_BY_NAME';
 export const POST_POKEMON = 'POST_POKEMON';
 export const GET_DETAIL = 'GET_DETAIL';
+export const CLEAN = 'CLEAN';
 
 export function getPokemons() {
     return async function(dispatch){
@@ -80,6 +81,13 @@ export function order(payload){
 export function orderByName(payload){
     return{
         type: ORDER_BY_NAME,
+        payload
+    }
+}
+
+export function clean(payload){
+    return{
+        type:CLEAN,
         payload
     }
 }

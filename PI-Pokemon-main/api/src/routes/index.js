@@ -92,7 +92,6 @@ router.get('/types', async (req, res) => {
 router.post('/pokemons', async (req, res) => {
     let { name, img, hp, attack, defense, speed, height, weight, createdInDb, types } = req.body
     if (!name) res.send('El nombre es obligatorio');
-    await axios("http://localhost:3001/types")
     let newPokemon = await Pokemon.create({
         name,
         img,
@@ -105,13 +104,13 @@ router.post('/pokemons', async (req, res) => {
         createdInDb
     });
     let typesDb = await Type.findAll({
-        where : { name : types} 
+        where : { name : types } 
     })
+    newPokemon.addType(typesDb)
+    res.send('Pokemon creado con exito')
     console.log(types)
     console.log("ACA", typesDb);
     console.log(newPokemon);
-    newPokemon.addTypes(typesDb)
-    res.send('Pokemon creado con exito')
 })
 
 router.get('/pokemons/:id', async (req, res) => {

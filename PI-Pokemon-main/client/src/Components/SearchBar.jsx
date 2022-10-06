@@ -18,8 +18,8 @@ const SearchBar = () => {
 
   return (
     <div>
-        <input type='text' placeholder='Buscar...' onChange={e => handleInputChange(e)}/>
-        <button type='submit' onClick={e => handleSubmit(e)}>Buscar</button>
+        <input type='text' placeholder='Search Pokemon...' onChange={e => handleInputChange(e)}/>
+        <button type='submit' onClick={e => handleSubmit(e)}>Search</button>
     </div>
   )
 }

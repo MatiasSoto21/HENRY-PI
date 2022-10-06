@@ -1,0 +1,11 @@
+.container{
+    background-image: url("https://www.wallpapertip.com/wmimgs/81-813546_rotom-pokedex-background.jpg");
+    background-size: cover;
+    overflow-y: scroll;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}

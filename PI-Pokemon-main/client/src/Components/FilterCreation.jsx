@@ -10,7 +10,7 @@ const FilterCreation = () => {
       }
 
   return (
-    <div>FiltbyCreation 
+    <div>Filter by Creation 
         <select onChange={e => handleFilterByCreation(e)}>
           <option value="All">All</option>
           <option value="Api">Already Exist</option>
