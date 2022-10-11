@@ -3,18 +3,7 @@ const axios = require('axios');
 
 const { Pokemon, Type } = require('../db');
 const router = Router();
-// Importar todos los routers;
-// Ejemplo: const authRouter = require('./auth.js');
-////////////////////////////////////////////////////////////////////////////////////////
-/* GET https://pokeapi.co/api/v2/pokemon
-   GET https://pokeapi.co/api/v2/pokemon/{id}
-   GET https://pokeapi.co/api/v2/pokemon/{name}
-   GET https://pokeapi.co/api/v2/type */
-///////////////////////////////////////////////////////////////////////////
-/* GET /pokemons:
-Obtener un listado de los pokemons desde pokeapi.
-Debe devolver solo los datos necesarios para la ruta principal */
-// NOMBRE IMAGEN Y TIPOS
+/////////////////////////////////////////////////
 
 const getApiInfo = async () => {
     const apiEnd = await axios("https://pokeapi.co/api/v2/pokemon?offset=0&limit=40")
@@ -24,8 +13,8 @@ const getApiInfo = async () => {
         .then(array => {
             return Promise.all(array.map(e => axios(e.url)))
         })
-        .then(data => {
-            return data.map(e => e.data);
+        .then(datos => {
+            return datos.map(e => e.data);
         })
     const apiInfo = await apiEnd.map(e => {
         return {
@@ -68,8 +57,8 @@ router.get('/pokemons', async (req, res) => {
     const name = req.query.name
     let allPokemons = await getAllPokemons();
     if (name) {
-        let pokemon = await allPokemons.filter(e => e.name.toLowerCase() === (name.toLowerCase()))
-        pokemon.length ?
+        let pokemon = allPokemons.filter(e => e.name.toLowerCase() === (name.toLowerCase()))
+        pokemon.length > 0 ?
             res.status(200).send(pokemon) :
             res.status(404).send('Pokemon no encontrado')
     } else {
@@ -108,18 +97,14 @@ router.post('/pokemons', async (req, res) => {
     })
     newPokemon.addType(typesDb)
     res.send('Pokemon creado con exito')
-    console.log(types)
-    console.log("ACA", typesDb);
-    console.log(newPokemon);
 })
 
 router.get('/pokemons/:id', async (req, res) => {
     const id = req.params.id
     let allPokemons = await getAllPokemons();
     if (id) {
-        let pokemon = await allPokemons.filter(e => e.id == id);
-        console.log(pokemon)
-        pokemon.length ?
+        let pokemon = allPokemons.filter(e => e.id == id);
+        pokemon.length > 0?
             res.status(200).json(pokemon) :
             res.status(404).send('La id no coincide con ningun pokemon')
     }
@@ -127,7 +112,7 @@ router.get('/pokemons/:id', async (req, res) => {
 
 
 // Configurar los routers
-// Ejemplo: router.use('/auth', authRouter);
+// Ejemplo: router.use('/auth', authRouter);    
 
 
 module.exports = router;

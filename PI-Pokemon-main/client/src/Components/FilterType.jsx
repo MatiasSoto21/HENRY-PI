@@ -1,6 +1,7 @@
 import React, {useEffect} from 'react'
 import { filterByType, getTypes } from '../Actions';
 import { useDispatch, useSelector } from 'react-redux';
+import styles from './Modulecss/FilterType.module.css'
 
 const FilterType = () => {
     const dispatch = useDispatch();
@@ -14,7 +15,7 @@ const FilterType = () => {
         dispatch(filterByType(e.target.value));
       }
   return (
-    <div> Filter by Type
+    <div className={styles.container}> Filter by Type
         <select onChange={e => handleFilterByType(e)}>
           <option value='All'>All</option>
             {types.map(e => 

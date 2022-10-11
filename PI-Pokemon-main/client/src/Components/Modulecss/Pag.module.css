@@ -1,19 +1,24 @@
 .container{
-    /* background-color: red; */
     display: flex;
     flex-direction: row;
     justify-content: center; 
 }
 
 .buttonPag{
-    margin: 10px;
-    width: 25px;
-    height: 25px;
+    margin: 9px;
+    width: 30px;
+    height: 32px;
     transition: 0.2s;
+    background-color: rgb(253, 255, 137);
 }
 
 .buttonPag:hover{
     transform: scale(1.5);
     /* transform: translateY(-20px); */
     box-shadow: 0 0 10px rgb(1, 5, 1);
+}
+
+.buttonPag:focus{
+    background-color: rgb(152, 179, 0);
+    transform: scale(1.5);
 }

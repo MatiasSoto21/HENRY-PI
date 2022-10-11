@@ -7,20 +7,53 @@
 }
 
 .detail{
-    border: 1px solid red;
+    border: 5px solid rgb(53, 53, 53);
+    border-radius: 10px;
     display: grid;
     justify-content: center;
     margin-top: 150px;
     margin-right: 300px;
     margin-left: 300px;
-    padding-right: 320px;
-    background-color: rgb(218, 218, 218);
+    padding-right: 220px;
+    padding-top: 20px;
+    background-color: rgb(189, 189, 189);
+}
+
+.detail span{
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.detail img{
+    margin-bottom: -300px;
+}
+
+.button{
+    background-color: rgb(235, 131, 131);
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: large;
+    height: 50px;
+    width: 150px;
+}
+
+.button:hover{
+    background-color: rgb(255, 73, 109);
+    cursor: pointer;
 }
 
 .detail p{
     position: relative;
-    left: 300px;
+    top: -80px;
+    left: 390px;
     bottom: 150px;
+    margin-bottom: 20px;
+    width: 120px;
+    border-radius: 10px;
+    padding: 5px;
+    background-color: whitesmoke;
+    font-weight: 600;
 }
 
 .loading {
@@ -31,6 +64,5 @@
 }
 
 .stats{
-    border: 1px solid red;
-    
+    border: 1px solid white;
 }

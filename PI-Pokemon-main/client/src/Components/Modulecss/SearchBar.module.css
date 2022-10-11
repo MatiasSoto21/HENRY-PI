@@ -1,0 +1,23 @@
+
+
+.container input{
+    background-color: aquamarine;
+    height: 27px;
+    padding-left: 10px;
+    font-style: italic;
+    font-size: medium;
+    margin-right: 10px;
+    border-radius: 10   px;
+}
+
+.container button{
+    border-radius: 10px;
+    background-color: rgb(230, 255, 142);
+    width: 70px;
+    height: 30px;
+}
+
+.container button:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+}

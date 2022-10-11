@@ -1,6 +1,7 @@
 import React from 'react'
 import { filteryByCreation } from '../Actions'
 import { useDispatch } from 'react-redux'
+import styles from './Modulecss/FilterCreation.module.css'
 
 const FilterCreation = () => {
     const dispatch = useDispatch();
@@ -10,7 +11,7 @@ const FilterCreation = () => {
       }
 
   return (
-    <div>Filter by Creation 
+    <div className={styles.container}>Filter by Creation 
         <select onChange={e => handleFilterByCreation(e)}>
           <option value="All">All</option>
           <option value="Api">Already Exist</option>

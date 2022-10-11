@@ -31,15 +31,13 @@ const rootReducer = (state = initialState, action) => {
                 ...state
             }     
         case FILTER_BY_TYPE:
-            const allPokemon = state.allPokemons
-            const filterType = action.payload === "All" ? allPokemon : allPokemon.filter(pokemon => pokemon.types.find(e => e.name === action.payload))
+            const filterType = action.payload === "All" ? state.allPokemons : state.allPokemons.filter(pokemon => pokemon.types.find(e => e.name === action.payload))
             return {
                 ...state,
                 pokemons: filterType
             }
         case FILTER_BY_CREATION:
-            const allPokemons = state.allPokemons
-            const filterByCreation = action.payload === 'Api' ? allPokemons.filter(e => !e.createdInDb) : allPokemons.filter(e => e.createdInDb)
+            const filterByCreation = action.payload === 'Api' ? state.allPokemons.filter(e => !e.createdInDb) : state.allPokemons.filter(e => e.createdInDb)
             return {
                 ...state,
                 pokemons: action.payload === 'All' ? state.allPokemons : filterByCreation

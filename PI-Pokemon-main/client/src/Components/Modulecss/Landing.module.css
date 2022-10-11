@@ -1,3 +1,9 @@
+.container{
+    width: 100%;
+    background-size: cover;
+    height: 100vh;
+    background-image: url("https://clickwallpapers.net/wp-content/uploads/2022/06/clickwallpapers-pokemon-4k-img2-scaled-1.jpg")
+}
 
 .landing {
    position: absolute;
@@ -37,11 +43,6 @@
     cursor: pointer;
 }
 
-.container{
-    width: 100%;
-    background-size: cover;
-    height: 100vh;
-    background-image: url("https://clickwallpapers.net/wp-content/uploads/2022/06/clickwallpapers-pokemon-4k-img2-scaled-1.jpg")
-}
+
 
 
