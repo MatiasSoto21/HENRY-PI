@@ -14,7 +14,6 @@
 
 .buttonPag:hover{
     transform: scale(1.5);
-    /* transform: translateY(-20px); */
     box-shadow: 0 0 10px rgb(1, 5, 1);
 }
 
@@ -22,3 +21,4 @@
     background-color: rgb(152, 179, 0);
     transform: scale(1.5);
 }
+

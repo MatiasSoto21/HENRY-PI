@@ -15,7 +15,7 @@ const Home = () => {
   const allPokemons = useSelector((state) => state.pokemons);
   const [ordenado, setOrdernado] = useState('');
   const [pag, setPag] = useState(1);
-  const [pokemonsPerPage, setPokemonsPerPage] = useState(12)
+  const pokemonsPerPage = 12
   const lastPokemon = pag * pokemonsPerPage
   const firstPokemon = lastPokemon - pokemonsPerPage
   const currentPokemons = allPokemons.slice(firstPokemon, lastPokemon)
@@ -28,6 +28,10 @@ const Home = () => {
     dispatch(getPokemons());
   }, [dispatch])
 
+  useEffect(() => {
+    setPag(1)
+  },[allPokemons, ordenado])
+
   function handleClick(e) {
     dispatch(getPokemons());
   }
@@ -35,13 +39,11 @@ const Home = () => {
   function handleOrderByName(e) {
     setOrdernado(`Ordenado por ${e.target.value}`)
     dispatch(orderByName(e.target.value))
-    setPag(1)
   }
 
   function handleOrder(e) {
     setOrdernado(`Ordenado${e.target.value}`)
     dispatch(order(e.target.value))
-    setPag(1)
   }
 
 

@@ -38,7 +38,7 @@ const CreatePokemon = () => {
   function handleSelect(e) {
     setInput({
       ...input,
-      types: input.types.concat (e.target.value)
+      types: !input.types.includes(e.target.value)? input.types.concat (e.target.value) : input.types
     })
     setErrors(validate({
       ...input,
