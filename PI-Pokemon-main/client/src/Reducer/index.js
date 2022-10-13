@@ -5,7 +5,6 @@ const initialState = {
     allPokemons: [],
     types: [],
     detail: [],
-    error: []
 }
 
 
