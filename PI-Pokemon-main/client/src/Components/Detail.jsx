@@ -6,6 +6,7 @@ import { useEffect } from 'react';
 import styles from './Modulecss/Detail.module.css'
 
 const Detail = (props) => {
+  
 const dispatch = useDispatch(); 
 const pokemonDetail = useSelector(state => state.detail)
 

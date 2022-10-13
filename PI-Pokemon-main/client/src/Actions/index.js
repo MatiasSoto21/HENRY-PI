@@ -1,3 +1,4 @@
+
 import axios from 'axios';
 
 export const GET_ALL_POKEMONS = 'GET_ALL_POKEMONS';
@@ -11,6 +12,7 @@ export const POST_POKEMON = 'POST_POKEMON';
 export const GET_DETAIL = 'GET_DETAIL';
 export const CLEAN = 'CLEAN';
 export const SEARCH = 'SEARCH';
+export const FAIL = 'FAIL';
 
 export function getPokemons() {
     return async function(dispatch){
@@ -28,6 +30,10 @@ export function getPokemonName (name){
         .then(res => dispatch({
             type: GET_POKEMON_NAME,
             payload: res.data
+        }))
+        .catch(error => dispatch({
+            type: FAIL,
+            payload: error.response.data
         }))
     }
 }

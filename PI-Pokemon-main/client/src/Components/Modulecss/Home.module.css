@@ -118,8 +118,19 @@
     margin: 20px 5%;
 }
 
+.pokemons h1{
+    width: 450%;
+    margin-top: 100px;
+}
+
 .link{
     text-decoration: none;
     color: rgb(5, 4, 2);
 }
 
+.error{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    width: 100%;
+}

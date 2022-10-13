@@ -1,10 +1,11 @@
-import { GET_ALL_POKEMONS, FILTER_BY_TYPE, FILTER_BY_CREATION, ORDER_BY_ATTACK, GET_POKEMON_NAME, ORDER_BY_NAME, GET_TYPES,POST_POKEMON, GET_DETAIL, CLEAN} from "../Actions";
+import { GET_ALL_POKEMONS, FILTER_BY_TYPE, FILTER_BY_CREATION, ORDER_BY_ATTACK, GET_POKEMON_NAME, ORDER_BY_NAME, GET_TYPES,POST_POKEMON, GET_DETAIL, CLEAN, FAIL} from "../Actions";
 
 const initialState = {
     pokemons: [],
     allPokemons: [],
     types: [],
-    detail: []
+    detail: [],
+    error: []
 }
 
 
@@ -35,13 +36,13 @@ const rootReducer = (state = initialState, action) => {
             const filterType = action.payload === "All" ? state.allPokemons : state.allPokemons.filter(pokemon => pokemon.types.find(e => e.name === action.payload))
             return {
                 ...state,
-                pokemons: filterType
+                pokemons: filterType.length > 0? filterType : 'Todavía no hay pokemons de ese tipo'
             }
         case FILTER_BY_CREATION:
             const filterByCreation = action.payload === 'Api' ? state.allPokemons.filter(e => !e.createdInDb) : state.allPokemons.filter(e => e.createdInDb)
             return {
                 ...state,
-                pokemons: action.payload === 'All' ? state.allPokemons : filterByCreation
+                pokemons: action.payload === 'All' ? state.allPokemons : filterByCreation.length? filterByCreation : 'Todavia no creaste ningun pokemon'
             }
         case ORDER_BY_ATTACK:
             const orderByAttack = action.payload === 'min' ? state.pokemons.sort(function (a, b) {
@@ -85,7 +86,13 @@ const rootReducer = (state = initialState, action) => {
             return {
                 ...state,
                 detail: []
-            }   
+            }
+            
+        case FAIL:
+            return {
+                ...state,
+                pokemons: action.payload
+            }
 
         default:
             return state

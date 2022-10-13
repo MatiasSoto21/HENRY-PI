@@ -18,7 +18,7 @@ const Home = () => {
   const pokemonsPerPage = 12
   const lastPokemon = pag * pokemonsPerPage
   const firstPokemon = lastPokemon - pokemonsPerPage
-  const currentPokemons = allPokemons.slice(firstPokemon, lastPokemon)
+  if (Array.isArray(allPokemons)) {var currentPokemons = allPokemons.slice(firstPokemon, lastPokemon)}
 
   const paginado = (number) => {
     setPag(number)
@@ -46,7 +46,6 @@ const Home = () => {
     dispatch(order(e.target.value))
   }
 
-
   return (
     <div className={styles.container}>
       <Link to='/pokemons'> <button className={styles.buttonCreate}>Crear Pokemon</button> </Link>
@@ -73,11 +72,11 @@ const Home = () => {
         </div>
       </div>
       <div className={styles.containerPagSearch}>
-        <Pag pokemonsPerPage={pokemonsPerPage} allPokemons={allPokemons.length} paginado={paginado} />
+        <Pag pokemonsPerPage={pokemonsPerPage} allPokemons={currentPokemons? allPokemons.length : 0} paginado={paginado} />
         <SearchBar />
       </div>
       <div className={styles.pokemons}>
-        {currentPokemons?.map(e =>
+        {currentPokemons? currentPokemons.map(e =>
           <div className={styles.card} key={e.id}>
             <Link to={'/detail/' + e.id} className={styles.link} key={e.id}>
               <Card
@@ -88,7 +87,9 @@ const Home = () => {
               />
             </Link>
           </div>
-        )}
+        ) : 
+        <h1>{allPokemons} 😢</h1>
+        }
       </div>
 
     </div>

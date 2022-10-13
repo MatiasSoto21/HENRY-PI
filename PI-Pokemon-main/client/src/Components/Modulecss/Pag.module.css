@@ -18,7 +18,9 @@
 }
 
 .buttonPag:focus{
-    background-color: rgb(152, 179, 0);
+    background-color: rgb(114, 134, 0);
     transform: scale(1.5);
 }
+
+
 

@@ -22,7 +22,7 @@
 
 .container div{
     margin-bottom: 20px;
-    width: 620px;
+    width: 745px;
 }
 
 .container span{
@@ -36,8 +36,8 @@
     margin-top: 40px;
     margin-left: 200px;
     padding: 40px;
-    padding-left: 150px;
-    padding-right: 150px;
+    padding-left: 130px;
+    padding-right: 80px;
     margin-right: 200px;
     background-color: rgb(211, 226, 241);
 }
