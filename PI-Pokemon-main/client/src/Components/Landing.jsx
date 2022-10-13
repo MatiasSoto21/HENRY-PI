@@ -6,10 +6,10 @@ function Landing() {
     <div className={s.container}>
       <div className={s.landing}>
         <h1>Welcome To Pokefind</h1>
-        </div>
-        <Link to='/home'>
-          <button>Search and Create your Own Pokemon!✨</button>
-        </Link>
+      </div>
+      <Link to='/home'>
+        <button>Search and Create your Own Pokemon!✨</button>
+      </Link>
     </div>
   )
 }

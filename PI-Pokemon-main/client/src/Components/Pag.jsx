@@ -9,12 +9,12 @@ const Pag = ({ pokemonsPerPage, allPokemons, paginado }) => {
     }
     return (
         <nav className={styles.container}>
-            
-                {pageNumbers?.map((e, i) =>
-                        <button className={styles.buttonPag} key={i} onClick={() => paginado(e)}>{e}</button>
-                    
-                )}
-            
+
+            {pageNumbers?.map((e, i) =>
+                <button className={styles.buttonPag} key={i} onClick={() => paginado(e)}>{e}</button>
+
+            )}
+
         </nav>
     )
 }

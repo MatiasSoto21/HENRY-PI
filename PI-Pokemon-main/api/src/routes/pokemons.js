@@ -3,7 +3,7 @@ const { Pokemon, Type } = require('../db')
 
 
 const pokemons = async (req, res) => {
-    const name = req.query.name
+    const {name} = req.query
     let allPokemons = await getAllPokemons();
     if (name) {
         let pokemon = allPokemons.filter(e => e.name.toLowerCase() === (name.toLowerCase()))
@@ -38,7 +38,7 @@ const createpokemon = async (req, res) => {
 
 
 const pokemonId = async (req, res) => {
-    const id = req.params.id
+    const {id} = req.params
     let allPokemons = await getAllPokemons();
     if (id) {
         let pokemon = allPokemons.filter(e => e.id == id);

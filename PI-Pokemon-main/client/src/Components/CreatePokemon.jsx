@@ -20,10 +20,10 @@ const CreatePokemon = () => {
     weight: '',
     types: []
   })
-  
+
   function validate(input) {
     let errors = {};
-    if (!/^[A-Za-z]+$/.test(input.name)) errors.name = 'Name must have A-z characters';
+    if (!/^[A-Za-z]+$/.test(input.name) || input.name.length > 255) errors.name = 'Name must have A-z characters and be less than 255';
     if (!input.img) errors.img = 'Insert URL of an image(optional)';
     if (input.hp < 1 || input.hp > 999) errors.hp = 'Hp must be 1-999';
     if (input.attack < 1 || input.attack > 999) errors.attack = 'Attack must be 1-999';

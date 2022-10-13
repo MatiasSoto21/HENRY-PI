@@ -15,26 +15,6 @@ router.post('/pokemons', createpokemon)
 
 router.get('/pokemons/:id', pokemonId)
 
-router.delete('/borrar/:id', async (req, res) => {
-    const {id} = req.params
-    try {
-        await Pokemon.destroy({
-            where: {
-                id: id
-            },
-            include:{
-                model: Type,
-                attributes:["name"],
-                through:{
-                    attributes:[]
-                }
-            }
-        })
-        res.status(201).send('poke eliminado')
-    } catch (error) {
-        res.status(404).send('algo salio mal')
-    }
-})
 
 
 
