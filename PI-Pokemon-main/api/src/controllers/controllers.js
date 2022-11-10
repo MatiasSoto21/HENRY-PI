@@ -25,7 +25,8 @@ const getApiInfo = async () => {
             defense: e.stats[3].base_stat,
             speed: e.stats[5].base_stat,
             height: e.height,
-            weight: e.weight
+            weight: e.weight,
+            specialAttack: e.stats[4].base_stat,
         }
     })
     return apiInfo

@@ -2,7 +2,7 @@ import React from 'react'
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { getPokemons, order, orderByName } from '../Actions';
+import { filterSpecial, getPokemons, order, orderByName } from '../Actions';
 import Card from './Card';
 import Pag from './Pag';
 import SearchBar from './SearchBar';
@@ -46,6 +46,10 @@ const Home = () => {
     dispatch(order(e.target.value))
   }
 
+  function ftSpecial(e){
+    dispatch(filterSpecial(e.target.value))
+  }
+
   return (
     <div className={styles.container}>
       <Link to='/pokemons'> <button className={styles.buttonCreate}>Crear Pokemon</button> </Link>
@@ -70,9 +74,15 @@ const Home = () => {
             <option value="min">➖Attack</option>
           </select>
         </div>
+        <div>
+          FilterSpecial<select onChange={e => ftSpecial(e)}>
+            <option value="All">All</option>
+            <option value="mayor">Special+80</option>
+          </select>
+        </div>
       </div>
       <div className={styles.containerPagSearch}>
-        <Pag pokemonsPerPage={pokemonsPerPage} allPokemons={currentPokemons ? allPokemons.length : 0} paginado={paginado} />
+        <Pag pokemonsPerPage={pokemonsPerPage} allPokemons={currentPokemons ? allPokemons.length : 0} paginado={paginado} setPag={pag} />
         <SearchBar />
       </div>
       <div className={styles.pokemons}>

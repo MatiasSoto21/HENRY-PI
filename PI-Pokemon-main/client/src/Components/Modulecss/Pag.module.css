@@ -17,10 +17,16 @@
     box-shadow: 0 0 10px rgb(1, 5, 1);
 }
 
-.buttonPag:focus{
+.buttonActive{
     background-color: rgb(114, 134, 0);
     transform: scale(1.5);
+    margin: 9px;
+    width: 30px;
+    height: 32px;
+    transition: 0.2s;
 }
+
+
 
 
 

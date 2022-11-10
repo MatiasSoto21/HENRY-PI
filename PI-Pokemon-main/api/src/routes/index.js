@@ -15,6 +15,19 @@ router.post('/pokemons', createpokemon)
 
 router.get('/pokemons/:id', pokemonId)
 
+router.post('/crear', async (req,res) => {
+    const {name} = req.body
+    try {
+        await Type.create({
+            name: name
+        })
+        res.status(200).send('Tipo creado')
+    } catch (error) {
+        res.status(404).send('algo salio mal')
+    }
+})
+
+
 
 
 

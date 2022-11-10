@@ -15,6 +15,8 @@ export const SEARCH = 'SEARCH';
 export const FAIL = 'FAIL';
 export const ORDER_HP = 'ORDER_HP';
 export const SPEED = 'SPEED';
+export const SPECIAL = 'SPECIAL';
+
 
 export function getPokemons() {
     return async function (dispatch) {
@@ -118,6 +120,13 @@ export function orderHp(payload) {
 export function filterspeed(payload) {
     return {
         type: SPEED,
+        payload
+    }
+}
+
+export function filterSpecial(payload){
+    return{
+        type: SPECIAL,
         payload
     }
 }
