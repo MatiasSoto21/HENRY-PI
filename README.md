@@ -6,7 +6,7 @@
 # Individual Project - Henry Pokemon
 
 <p align="left">
-  <img height="150" src="./pokemon.png" />
+  <img height="150" src="https://github.com/MatiasSoto21/HENRY-PI/raw/main/PI-Pokemon-main/pokemon.png" />
 </p>
 
 ## Objetivos del Proyecto
