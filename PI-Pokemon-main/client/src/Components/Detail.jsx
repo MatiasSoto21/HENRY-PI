@@ -19,9 +19,11 @@ const Detail = (props) => {
 
 
   return (
+    <div>
+
+      {pokemonDetail.length > 0 ?
     <div className={styles.container}>
       <Link to="/home"><button className={styles.button}>Go Back</button></Link>
-      {pokemonDetail.length > 0 ?
 
         <div className={styles.detail}>
           <h1>{pokemonDetail[0].name[0].toUpperCase() + pokemonDetail[0].name.substring(1)}</h1> <span> ID {pokemonDetail[0].id}</span>
@@ -33,13 +35,17 @@ const Detail = (props) => {
           <p className={styles.stats}>Height: {pokemonDetail[0].height}</p>
           <p className={styles.stats}>Weight: {pokemonDetail[0].weight}</p>
           <p>Types: {pokemonDetail[0].types.map(e => e.name[0].toUpperCase() + e.name.substring(1) + ' ')}</p>
-        </div> :
+        </div> 
+    </div>
+        :
         <div className={styles.loading}>
-          <h1>Loading....</h1>
+          <h1>Loading...</h1>
+          <img src="https://i.pinimg.com/originals/4e/a2/3e/4ea23e6339937b95a8aa5cd08eeb3266.gif"
+          alt='loading'/>
         </div>
 
-      }
-    </div>
+}
+</div>
   )
 }
 

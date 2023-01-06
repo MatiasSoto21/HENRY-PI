@@ -58,8 +58,9 @@
 
 .loading {
     display: flex;
-    align-content: center;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
     margin-top: 300px;
 }
 
