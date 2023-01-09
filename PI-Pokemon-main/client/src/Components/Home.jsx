@@ -45,12 +45,14 @@ const Home = () => {
     setOrdernado(`Ordenado${e.target.value}`)
     dispatch(order(e.target.value))
   }
-
+  
   function ftSpecial(e){
     dispatch(filterSpecial(e.target.value))
   }
-
+  
   return (
+    <div>
+      {allPokemons.length > 0?
     <div className={styles.container}>
       <Link to='/pokemons'> <button className={styles.buttonCreate}>Crear Pokemon</button> </Link>
       <h1> PokeFind </h1>
@@ -103,6 +105,14 @@ const Home = () => {
       </div>
 
     </div>
+        : 
+        <div className={styles.loading}>
+        <img src="https://cdn.dribbble.com/users/1407587/screenshots/3014076/poke.gif"
+        alt='loading'/> 
+        <h1>Loading...</h1>
+        </div>
+        }
+      </div>
   )
 }
 
