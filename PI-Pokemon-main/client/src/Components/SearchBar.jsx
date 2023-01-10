@@ -24,7 +24,7 @@ const SearchBar = () => {
   return (
     <div className={styles.container}>
       <input type='text' placeholder='Search Pokemon...' onChange={e => handleInputChange(e)} />
-      <button type='submit' onClick={e => handleSubmit(e)}>Search</button>
+      {/* <button type='submit' onClick={e => handleSubmit(e)}>Search</button> */}
     </div>
   )
 }

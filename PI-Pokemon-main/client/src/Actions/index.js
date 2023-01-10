@@ -42,13 +42,20 @@ export function getPokemonName(name) {
     }
 }
 
+export function searchpokemon(payload) {
+    return {
+        type: SEARCH,
+        payload
+    }
+}
+
 export function getPokemonDetail(id) {
     return async function (dispatch) {
         return await axios("http://localhost:3001/pokemons/" + id)
-            .then(res => dispatch({
-                type: GET_DETAIL,
-                payload: res.data
-            }))
+        .then(res => dispatch({
+            type: GET_DETAIL,
+            payload: res.data
+        }))
     }
 }
 
@@ -103,12 +110,6 @@ export function clean(payload) {
     }
 }
 
-export function searchpokemon(payload) {
-    return {
-        type: SEARCH,
-        payload
-    }
-}
 
 export function orderHp(payload) {
     return {

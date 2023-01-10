@@ -93,7 +93,11 @@ const rootReducer = (state = initialState, action) => {
             }
 
         case SEARCH:
-            const filtro = action.payload ? state.allPokemons.filter(e => e.name.toLowerCase().includes(action.payload.toLowerCase())) : state.allPokemons
+            const filtro = state.allPokemons.filter(e => e.name.toLowerCase().includes(action.payload.toLowerCase())).length > 0? 
+            state.allPokemons.filter(e => e.name.toLowerCase().includes(action.payload.toLowerCase()))
+            :
+             "Pokemon not found"
+             console.log("filtro", filtro);
             return {
                 ...state,
                 pokemons: filtro
