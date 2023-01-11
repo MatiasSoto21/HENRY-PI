@@ -12,10 +12,10 @@ const Pag = ({ pokemonsPerPage, allPokemons, paginado, setPag }) => {
 
             {pageNumbers?.map((e, i) =>
                 <button className={e === setPag?styles.buttonActive : styles.buttonPag} key={i} onClick={() => paginado(e)}>{e}</button>
+                
+                )}
 
-            )}
-
-        </nav>
+        </nav>    
     )
 }
 

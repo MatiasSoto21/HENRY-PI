@@ -6,10 +6,12 @@
 
 .buttonPag{
     margin: 9px;
-    width: 30px;
-    height: 32px;
+    width: 45px;
+    height: 45px;
     transition: 0.2s;
-    background-color: rgb(253, 255, 137);
+    border-radius: 50%;
+    background-color: #FFE53B;
+    background-image: linear-gradient(147deg, #FFE53B 0%, #FF2525 74%);
 }
 
 .buttonPag:hover{
@@ -18,11 +20,15 @@
 }
 
 .buttonActive{
-    background-color: rgb(114, 134, 0);
+    background-color: #ee8638;
+    background-image: linear-gradient(180deg, #ee8638 0%, #f2e114 50%, #e0992e 100%);
+    
+
     transform: scale(1.5);
     margin: 9px;
-    width: 30px;
-    height: 32px;
+    width: 45px;
+    border-radius: 50%;
+    height: 45px;
     transition: 0.2s;
 }
 
