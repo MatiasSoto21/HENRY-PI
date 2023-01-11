@@ -4,7 +4,7 @@ const { Pokemon, Type } = require('../db');
 /////////////////////////////
 
 const getApiInfo = async () => {
-    const apiEnd = await axios("https://pokeapi.co/api/v2/pokemon?offset=0&limit=40")
+    const apiEnd = await axios("https://pokeapi.co/api/v2/pokemon?offset=0&limit=60")
         .then(res => {
             return res.data.results;
         })
@@ -22,11 +22,12 @@ const getApiInfo = async () => {
             types: e.types.map(e => e.type),
             hp: e.stats[0].base_stat,
             attack: e.stats[1].base_stat,
-            defense: e.stats[3].base_stat,
+            defense: e.stats[2].base_stat,
             speed: e.stats[5].base_stat,
             height: e.height,
             weight: e.weight,
-            specialAttack: e.stats[4].base_stat,
+            specialAttack: e.stats[3].base_stat,
+            specialDefense: e.stats[4].base_stat,
         }
     })
     return apiInfo

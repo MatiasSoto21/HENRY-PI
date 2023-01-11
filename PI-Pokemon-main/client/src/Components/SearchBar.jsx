@@ -17,9 +17,9 @@ const SearchBar = () => {
     dispatch(searchpokemon(e.target.value))
   }
 
-  function handleSubmit(e) {
+ /*  function handleSubmit(e) {
     dispatch(getPokemonName(name));
-  }
+  } */
 
   return (
     <div className={styles.container}>
