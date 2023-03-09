@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { getPokemonName } from '../Actions';
+/* import React, { useState } from 'react' */
+/* import { getPokemonName } from '../Actions'; */
 import { useDispatch } from 'react-redux';
 import styles from './Modulecss/SearchBar.module.css';
 import { searchpokemon } from '../Actions';
@@ -10,10 +10,10 @@ import { searchpokemon } from '../Actions';
 const SearchBar = () => {
 
   const dispatch = useDispatch();
-  const [name, setName] = useState('');
+  /* const [name, setName] = useState(''); */
 
   function handleInputChange(e) {
-    setName(e.target.value);
+    /* setName(e.target.value); */
     dispatch(searchpokemon(e.target.value))
   }
 

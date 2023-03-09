@@ -1,7 +1,9 @@
 .card{
     border-radius: 50%;
-    background-color: rgb(240, 123, 123);
-    border: 5px solid white;
+    /* background-color: rgb(213, 238, 243); */
+    background: rgb(255,255,255);
+    background: radial-gradient(circle, rgba(255,255,255,1) 19%, rgba(255,97,97,1) 66%, rgba(0,0,0,1) 100%);
+    border: 5px solid rgb(255, 255, 255);
     width: 300px;
     text-align: center;
     transition: 0.9s;
@@ -13,6 +15,9 @@
 
 .card h3{
     margin-top: 5px;
+    color: white;
+    font-size: x-large;
+    font-weight: 400;
 }
 
 .card:hover{
