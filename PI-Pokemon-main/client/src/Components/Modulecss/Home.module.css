@@ -8,6 +8,10 @@
 }
 .container h1{
     display: flex;
+    color: white;
+    font-size: 60px;
+    
+    font-style: oblique;
     justify-content: center;
     top: 0px;
     

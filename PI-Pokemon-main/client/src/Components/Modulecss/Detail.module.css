@@ -12,11 +12,21 @@
     display: grid;
     justify-content: center;
     margin-top: 150px;
-    margin-right: 300px;
-    margin-left: 300px;
+    margin-right: 400px;
+    margin-left: 400px;
     padding-right: 220px;
     padding-top: 20px;
-    /* background-color: rgb(189, 189, 189); */
+    background: rgb(0, 0, 0);
+    background: radial-gradient(circle, rgb(191, 235, 255) 19%, rgb(97, 250, 255) 66%, rgb(0, 141, 151) 100%);
+    opacity: 0.9;
+}
+
+.pokeball{
+    position: relative;
+    bottom: 290px;
+    left: -220px;
+    width: 150px;
+    height: 150px;
 }
 
 .detail span{
@@ -45,15 +55,24 @@
 
 .detail p{
     position: relative;
-    top: -80px;
+    top: -110px;
     left: 390px;
     bottom: 150px;
     margin-bottom: 20px;
     width: 120px;
     border-radius: 20px;
-    padding: 6px;
-    /* background-color: whitesmoke; */
-    font-weight: 600;
+    padding: 17px;
+    font-weight: 700;
+    font-size: large;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(0, 0, 0);
+}
+
+.detail h1{
+    color: red;
+    font-weight: 800;
+    font-size: 50px;
+    font-style: oblique;
 }
 
 .loading {
@@ -89,4 +108,8 @@
 
 .statsSpDef{
     background-color: seagreen;
+}
+
+.statType{
+    background-color: aquamarine;
 }

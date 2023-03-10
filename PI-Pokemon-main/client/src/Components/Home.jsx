@@ -54,11 +54,11 @@ const Home = () => {
     <div>
       {allPokemons.length > 0?
     <div className={styles.container}>
-      <Link to='/pokemons'> <button className={styles.buttonCreate}>Crear Pokemon</button> </Link>
-      <h1> PokeFind </h1>
-      <div className={styles.divbutton}>
+      <Link to='/pokemons'> <button className={styles.buttonCreate}>Create your Pokemon!</button> </Link>
+      <h1>- PokeFind -</h1>
+      {/* <div className={styles.divbutton}>
         <button className={styles.buttonReload} onClick={e => handleClick(e)}>Reload Page</button>
-      </div>
+      </div> */}
       <div className={styles.filters}>
         <FilterType />
         <FilterCreation />
@@ -76,12 +76,12 @@ const Home = () => {
             <option value="min">➖Attack</option>
           </select>
         </div>
-        <div>
+        {/* <div>
           FilterSpecial<select onChange={e => ftSpecial(e)}>
             <option value="All">All</option>
             <option value="mayor">Special+80</option>
           </select>
-        </div>
+        </div> */}
       </div>
       <div className={styles.containerPagSearch}>
         <Pag pokemonsPerPage={pokemonsPerPage} allPokemons={currentPokemons ? allPokemons.length : 0} paginado={paginado} setPag={pag} />

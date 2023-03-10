@@ -34,7 +34,8 @@ const Detail = (props) => {
           <p className={styles.statsSpAt}>Sp.Atk: {pokemonDetail[0].specialAttack}</p>
           <p className={styles.statsSpDef}>Sp.Def: {pokemonDetail[0].specialDefense}</p>
           <p className={styles.statssp}>Speed: {pokemonDetail[0].speed}</p>
-          <p>Types: {pokemonDetail[0].types.map(e => e.name[0].toUpperCase() + e.name.substring(1) + ' ')}</p>
+          <p className={styles.statType}>Types: {pokemonDetail[0].types.map(e => e.name[0].toUpperCase() + e.name.substring(1) + ' ')}</p>
+        <img className={styles.pokeball} src='https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Pokebola-pokeball-png-0.png/800px-Pokebola-pokeball-png-0.png'/>
         </div> 
     </div>
         :
