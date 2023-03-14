@@ -50,11 +50,12 @@
 
 .container label{
     border-radius: 15px;
-    background-color: rgb(242, 175, 255);
+    background-color: rgb(246, 196, 255);
     padding-left: 10px;
-    padding-right: 10px;
+    padding-right: 20px;
     padding-bottom: 5px;
     padding-top: 1px;
+
 }
 
 .container select{
@@ -94,7 +95,10 @@
 .ptypes{
     background-color: rgb(250, 235, 151);
     border-radius: 10px;
-    padding: 4px;
+    margin-right: -13px;
+    padding: 15px;
+    padding-left: 23px;
+    padding-right: 30px;
 }
 
 
@@ -104,8 +108,26 @@
     margin-top: 20px;
     left: 300px;
     padding: 10px;
+
 }
 
 #create:hover{
     cursor: pointer;
+}
+
+#delete{
+    position: relative;
+    color: white;
+    padding: 2px;
+    background-color: red;
+    bottom: 12px;
+    right: 12px;
+    width: 18px;
+    height: 20px;
+}
+
+#delete:hover{
+    cursor: pointer;
+    transform: scale(1.2);
+    background-color: rgb(173, 1, 1);
 }

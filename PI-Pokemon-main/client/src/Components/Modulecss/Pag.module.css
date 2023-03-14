@@ -6,6 +6,7 @@
 
 .buttonPag{
     margin: 9px;
+    margin-bottom: 20px;
     width: 45px;
     height: 45px;
     transition: 0.2s;

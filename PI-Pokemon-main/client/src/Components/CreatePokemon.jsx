@@ -18,6 +18,8 @@ const CreatePokemon = () => {
     speed: '',
     height: '',
     weight: '',
+    specialAttack: '',
+    specialDefense: '',
     types: []
   })
 
@@ -31,6 +33,9 @@ const CreatePokemon = () => {
     if (input.speed < 1 || input.speed > 999) errors.speed = 'Speed must be 1-999';
     if (input.height < 1 || input.height > 999) errors.height = 'Height must be 1-999';
     if (input.weight < 1 || input.weight > 999) errors.weight = 'Weight must be 1-999';
+    if (input.specialAttack < 1 || input.specialAttack > 999) errors.specialAttack = 'SpAt must be 1-999';
+    if (input.specialDefense < 1 || input.specialDefense > 999) errors.specialDefense = 'SpDef must be 1-999';
+
     if (!input.types.length) errors.types = 'Select at least 1 type';
 
     return errors;
@@ -80,6 +85,8 @@ const CreatePokemon = () => {
       speed: '',
       height: '',
       weight: '',
+      specialAttack: '',
+      specialDefense: '',
       types: []
     })
   }
@@ -146,6 +153,18 @@ const CreatePokemon = () => {
           {errors.weight && <p>*{errors.weight}</p>}
         </div>
         <div>
+          <label>SpAttack:</label>
+          <input onChange={e => handleInputChange(e)} type='range' min='1' max='999' value={input.specialAttack} name='specialAttack' />
+          <span>{input.specialAttack}</span>
+          {errors.specialAttack && <p>*{errors.specialAttack}</p>}
+        </div>
+        <div>
+          <label>SpDefense:</label>
+          <input onChange={e => handleInputChange(e)} type='range' min='1' max='999' value={input.specialDefense} name='specialDefense' />
+          <span>{input.specialDefense}</span>
+          {errors.specialDefense && <p>*{errors.specialDefense}</p>}
+        </div>
+        <div>
           <label>Types</label>
           <select onChange={e => handleSelect(e)}>
             {types.map(e =>
@@ -153,13 +172,13 @@ const CreatePokemon = () => {
           </select>
           {input.types?.map((e, i) =>
             <div style={{ display: "inline", margin: "5px" }} key={i}>
-              <p className={styles.ptypes}>{e}</p>
-              <button type='reset' onClick={() => handleDelete(e)} >x</button>
+              <p className={styles.ptypes}>{e[0].toUpperCase() + e.substring(1)}</p>
+              <button id={styles.delete} type='reset' onClick={() => handleDelete(e)} >X</button>
             </div>
           )}
           {errors.types && <p>*{errors.types}</p>}
         </div>
-        {!errors.attack && !errors.defense && !errors.speed && !errors.height && !errors.weight && !errors.hp && !errors.name && input.types.length > 0 ? <button id={styles.create} type='submit'>Create</button> : <p>*All Fields Must Be Completed Except Img</p>}
+        {!errors.specialAttack && !errors.specialDefense && !errors.attack && !errors.defense && !errors.speed && !errors.height && !errors.weight && !errors.hp && !errors.name && input.types.length > 0 ? <button id={styles.create} type='submit'>Create</button> : <p>*All Fields Must Be Completed Except Img</p>}
       </form>
 
     </div>

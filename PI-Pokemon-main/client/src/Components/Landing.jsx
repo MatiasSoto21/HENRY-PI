@@ -10,6 +10,11 @@ function Landing() {
       <Link to='/home'>
         <button>Search and Create your Own Pokemon!✨</button>
       </Link>
+      <div className={s.sprite}>
+        <div className={s.pika}>
+
+        </div>
+      </div>
     </div>
   )
 }

@@ -62,6 +62,20 @@ module.exports = (sequelize) => {
         min: 1
     }
     },
+    specialDefense: {
+      type: DataTypes.INTEGER,
+      validate: {   
+        max: 999,
+        min: 1
+    }
+    },
+    specialAttack: {
+      type: DataTypes.INTEGER,
+      validate: {   
+        max: 999,
+        min: 1
+    }
+    },
     createdInDb: {
       type: DataTypes.BOOLEAN,
       allowNull: false,

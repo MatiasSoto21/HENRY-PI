@@ -99,10 +99,13 @@ const Home = () => {
               />
             </Link>
           </div>
+          
         ) :
           <h1>{allPokemons} 😢</h1>
         }
       </div>
+      <Pag pokemonsPerPage={pokemonsPerPage} allPokemons={currentPokemons ? allPokemons.length : 0} paginado={paginado} setPag={pag} />
+
 
     </div>
         : 

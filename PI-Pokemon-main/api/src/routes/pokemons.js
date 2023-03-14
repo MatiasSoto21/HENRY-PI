@@ -16,7 +16,7 @@ const pokemons = async (req, res) => {
 }
 
 const createpokemon = async (req, res) => {
-    let { name, img, hp, attack, defense, speed, height, weight, createdInDb, types } = req.body
+    let { name, img, hp, attack, defense, speed, height, weight, createdInDb, types, specialAttack, specialDefense } = req.body
     if (!name) res.send('El nombre es obligatorio');
     let newPokemon = await Pokemon.create({
         name,
@@ -27,6 +27,9 @@ const createpokemon = async (req, res) => {
         speed,
         height,
         weight,
+        specialAttack,
+        specialDefense,
+
         createdInDb
     });
     let typesDb = await Type.findAll({
