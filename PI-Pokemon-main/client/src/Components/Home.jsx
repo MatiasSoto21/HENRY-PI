@@ -2,7 +2,7 @@ import React from 'react'
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { filterSpecial, getPokemons, order, orderByName } from '../Actions';
+import { getPokemons, order, orderByName } from '../Actions';
 import Card from './Card';
 import Pag from './Pag';
 import SearchBar from './SearchBar';
@@ -32,9 +32,6 @@ const Home = () => {
     setPag(1)
   }, [allPokemons, ordenado])
 
-  function handleClick(e) {
-    dispatch(getPokemons());
-  }
 
   function handleOrderByName(e) {
     setOrdernado(`Ordenado por ${e.target.value}`)
@@ -46,9 +43,6 @@ const Home = () => {
     dispatch(order(e.target.value))
   }
   
-  function ftSpecial(e){
-    dispatch(filterSpecial(e.target.value))
-  }
   
   return (
     <div>

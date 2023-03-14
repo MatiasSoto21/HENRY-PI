@@ -106,7 +106,7 @@ const CreatePokemon = () => {
           {errors.name && <p>*{errors.name}</p>}
         </div>
         <div>
-          <label>Img:</label>
+          <label>ImgURL:</label>
           <div className={styles.img}>
             <input onChange={e => handleInputChange(e)} type='text' value={input.img} name='img' />
           </div>

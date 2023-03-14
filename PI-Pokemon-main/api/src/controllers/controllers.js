@@ -48,7 +48,7 @@ const getDbInfo = async () => {
 const getAllPokemons = async () => {
     const apiInfo = await getApiInfo();
     const dbInfo = await getDbInfo();
-    const All = apiInfo.concat(dbInfo);
+    const All = dbInfo.concat(apiInfo);
     return All;
 }
 
