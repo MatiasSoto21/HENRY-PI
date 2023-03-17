@@ -107,6 +107,9 @@
         margin-left: 0px;
         margin-top: 50px;
     }
+    .container{
+        height: 100%;
+    }
     .sprite{
         margin-top: 50px;
         margin-left: 0px;
@@ -125,7 +128,6 @@
         width: 400px;
         height: 400px;
     }
-
     .landing {
         justify-content: center;
         align-items: center;
