@@ -2,7 +2,7 @@ require('dotenv').config();
 const { Sequelize } = require('sequelize');
 const fs = require('fs');
 const path = require('path');
-const { DB_USER, DB_PASSWORD, DB_HOSTPG,DB_HOST, DB_DATABASE, DB_PORT } = process.env;
+const { DB_USER, DB_PASSWORD, DB_PASSWORDLH, DB_HOSTPG,DB_HOST, DB_DATABASE, DB_PORT } = process.env;
 
 const sequelize = process.env.NODE_ENV === "production"? new Sequelize({
   database: DB_DATABASE,
@@ -26,7 +26,7 @@ const sequelize = process.env.NODE_ENV === "production"? new Sequelize({
   ssl: true,
 }):
 
-new Sequelize(`postgresql://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/pokemon`, {
+new Sequelize(`postgresql://${DB_USER}:${DB_PASSWORDLH}@${DB_HOST}/pokemon`, {
   logging: false, // set to console.log to see the raw SQL queries
   native: false, // lets Sequelize know we can use pg-native for ~30% more speed
 });

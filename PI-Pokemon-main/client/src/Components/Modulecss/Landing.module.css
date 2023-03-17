@@ -1,52 +1,31 @@
 .container{
+    display: flex;
+    flex-direction: column;
     width: 100%;
     background-size: cover;
     height: 100vh;
     background-image: url(../../pikachu.jpg);
 }
 
-.landing {
-   position: absolute;
-   top: 50px;
-   left: 150px;
-   width: 500px;
-   height: 100px;
-
-}
-
 .container h1{
-    position: absolute;
-    top: 60px;
+    display: flex;
     color: rgb(255, 255, 255);
     text-shadow: 10px 10px 10px rgb(0, 0, 0);
     text-decoration-line: underline;
-    
-    
+    margin-left: 100px;
+    margin-top: 100px;
 }
 
-.container button{
-    font-size: large;
-    top: 700px;
-    width: 400px;
-    height: 50px;
-    position: absolute;
-    background-color: rgba(255, 217, 0, 0.918);
-    left: 120px;
-    text-transform: capitalize;
+.landing {
+   display: flex;
+   flex-direction: column;
 }
-.container button:hover{
-    background-color: rgb(255, 255, 255);
-    color: blueviolet;
-    font-style: oblique;
-    border-radius: 20px;
-    transform: scale(1.08);
-    cursor: pointer;
-}
+
 
 .sprite{
-    position: absolute;
-    left: 250px;
-    bottom: 380px;
+    display: flex;
+    margin-left: 200px;
+    margin-top: 80px;
     width: calc(1806px / 12);
     height: 381px;
     background: url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/fbd54d69-4c44-492f-a875-34581f2193d3/dbuep2k-cede9c13-4fea-4f3f-9be3-3b36965d2521.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2ZiZDU0ZDY5LTRjNDQtNDkyZi1hODc1LTM0NTgxZjIxOTNkM1wvZGJ1ZXAyay1jZWRlOWMxMy00ZmVhLTRmM2YtOWJlMy0zYjM2OTY1ZDI1MjEucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.V3KeGQMabwi13IGRTk6h9eToH9zTf3Y3K74-RWcirwY);
@@ -63,6 +42,36 @@
     }
 }
 
+.botonlink{
+    border-radius: 5px;
+    color: black;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: large;
+    font-weight: 700;
+    margin-top: 50px;
+    margin-left: 100px;
+    width: 400px;
+    height: 50px;
+    background-color: rgba(255, 217, 0, 0.918);
+    text-transform: capitalize;
+}
+
+.botonlink:hover{
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 4, 255);
+    font-style: oblique;
+    border-radius: 20px;
+    transform: scale(1.08);
+    cursor: pointer;
+}
+
+.pikachu{
+    display: none;
+}
+
 .chivo{
     display: flex;
     flex-direction: column;
@@ -70,21 +79,15 @@
     align-items: flex-end;
     color: white;
     margin-right: 150px;
-    padding-top: 300px;
 }
 
 .chivo p{
-    margin-bottom: 30px;
     font-size: large;
     font-weight: 400;
     font-style: italic;
+    margin-bottom: 20px;
 }
 
-.chivo img{
-    position: relative;
-    top: 10px;
-    right: 5px;
-}
 
 .linkchivo{
     text-decoration: none;
@@ -96,6 +99,36 @@
     transform: scale(1.2);
 }
 
+@media screen and (max-width: 720px){
+    .container h1{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 0px;
+        margin-top: 50px;
+    }
+    .sprite{
+        margin-top: 50px;
+        margin-left: 0px;
+    }
+    .botonlink{
+        margin-top: 50px;
+        margin-left: 0px;
+    }
+    .chivo{
+        margin-top: 200px;
+    }
+    .pikachu{
+        display: flex;
+        margin-top: 40px;
+        margin-left: 60px;
+        width: 400px;
+        height: 400px;
+    }
 
-
+    .landing {
+        justify-content: center;
+        align-items: center;
+     }
+}
 
