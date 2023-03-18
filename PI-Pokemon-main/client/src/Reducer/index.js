@@ -34,13 +34,13 @@ const rootReducer = (state = initialState, action) => {
             const filterType = action.payload === "All" ? state.allPokemons : state.allPokemons.filter(pokemon => pokemon.types.find(e => e.name === action.payload)    )
             return {
                 ...state,
-                pokemons: filterType.length > 0 ? filterType : 'Todavía no hay pokemons de ese tipo'
+                pokemons: filterType.length > 0 ? filterType : 'Pokemons Not Found'
             }
         case FILTER_BY_CREATION:
             const filterByCreation = action.payload === 'Api' ? state.allPokemons.filter(e => !e.createdInDb) : state.allPokemons.filter(e => e.createdInDb)
             return {
                 ...state,
-                pokemons: action.payload === 'All' ? state.allPokemons : filterByCreation.length ? filterByCreation : 'Todavia no creaste ningun pokemon'
+                pokemons: action.payload === 'All' ? state.allPokemons : filterByCreation.length ? filterByCreation : 'No Pokemons Created'
             }
         case ORDER_BY_ATTACK:
             const orderByAttack = action.payload === 'min' ? state.pokemons.sort(function (a, b) {

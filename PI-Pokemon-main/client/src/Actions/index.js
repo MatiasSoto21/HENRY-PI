@@ -16,7 +16,7 @@ export const FAIL = 'FAIL';
 export const ORDER_HP = 'ORDER_HP';
 export const SPEED = 'SPEED';
 export const SPECIAL = 'SPECIAL';
-axios.defaults.baseURL = /* 'https://localhost:3001' */ 'https://henry-pi-production-21a9.up.railway.app'
+axios.defaults.baseURL = 'http://localhost:3001' /* 'https://henry-pi-production-21a9.up.railway.app' */
 
 
 export function getPokemons() {
