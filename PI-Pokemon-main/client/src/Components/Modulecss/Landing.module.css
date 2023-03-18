@@ -118,6 +118,7 @@
     .botonlink{
         margin-top: 50px;
         margin-left: 0px;
+        width: 380px;
     }
     .chivo{
         margin-top: 200px;
@@ -126,8 +127,8 @@
         display: flex;
         margin-top: 40px;
         margin-left: 60px;
-        width: 400px;
-        height: 400px;
+        width: 320px;
+        height: 320px;
     }
     .landing {
         justify-content: center;
