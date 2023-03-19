@@ -2,6 +2,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     background-image: url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/2fb2821a-1406-4a1d-9b04-6668f278e944/d843okx-eb13e8e4-0fa4-4fa9-968a-e0f36ff168de.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzJmYjI4MjFhLTE0MDYtNGExZC05YjA0LTY2NjhmMjc4ZTk0NFwvZDg0M29reC1lYjEzZThlNC0wZmE0LTRmYTktOTY4YS1lMGYzNmZmMTY4ZGUucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.TIK_E5L8dTyBUk_dADA5WkLP8jSJMR7YGJG54KNAido");
     background-size: cover;
     overflow-y: scroll;
@@ -11,17 +12,17 @@
 
 .button{
     background-color: rgb(235, 131, 131);
-    position: absolute;
-    top: 20px;
-    left: 20px;
     font-size: large;
     height: 50px;
     width: 150px;
+    margin-bottom: 20px;
+    font-weight: 600;
 }
 
 .button:hover{
     background-color: rgb(255, 73, 109);
     cursor: pointer;
+    transform: scale(1.1);
 }
 
 .detail{
@@ -128,11 +129,14 @@
 }
 
 @media screen and (max-width: 720px){
+    
     .detail{
-        padding-top: 40px;
+        padding-top: 10px;
         flex-wrap: wrap;
         margin-left: 50px;
+        margin-top: 50px;
         margin-right: 50px;
+        margin-bottom: 400px;
     }
     .pokeball{
         margin-bottom: 10px;
@@ -141,4 +145,9 @@
         height: 100px;
         margin-left: 50px;
     }
+    .button{
+    margin-bottom: 0px;
+    margin-top: 300px;
+    }
+
 }
