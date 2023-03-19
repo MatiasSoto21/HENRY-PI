@@ -131,3 +131,138 @@
     transform: scale(1.2);
     background-color: rgb(173, 1, 1);
 }
+
+@media screen and (min-width: 360px){
+    .container form{
+        display: flex;
+        flex-direction: column;
+        margin-left: 0px;
+        margin-right: 0px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        padding-left: 0px;
+        padding-right: 0px;
+        padding-top: 0px;
+        padding-bottom: 0px;
+    }
+
+    .container label{
+        font-size: 12px;
+        font-weight: 700;
+        margin-left: 10px;
+        padding-left: 10px;
+    }
+
+    .container div{
+        width: 300px;
+        margin-bottom: 2px;
+        margin-top: 2px;
+    }
+
+    .container input{
+        margin-left: 20px;
+        margin-right: 8px;
+        width: 120px;
+        height: 10px;
+        font-size: 12px;
+    }
+
+    .container h1{
+        font-size: 20px;
+    }
+
+    .container p{
+        font-size: 10px;
+        margin-left: 20px;
+        display: list-item;
+    }
+
+    .container span{
+        font-size: 10px;
+    }
+
+    .button{
+        position: relative;
+        text-align: center;
+        left: -150px;
+        width: 50px;
+        height: 30px;
+        font-size: 12px;
+    }
+    .ptypes{
+        background-color: rgb(250, 235, 151);
+        border-radius: 10px;
+        margin-right: 0px;
+        margin-top: 10px;
+        margin-bottom: 0px;
+        padding: 2px;
+        padding-left: 0px;
+        padding-right: 0px;
+        width: 50px;
+        text-align: center;
+    }
+    #delete{
+        display: flex;
+        color: white;
+        padding: 2px;
+        background-color: red;
+        margin-top: -17px;
+        margin-left: 88px;
+        width: 15px;
+        height: 18px;
+        font-size: 10px;
+        bottom: 0px;
+        right: 0px;
+    }
+    #create{
+        font-size: large;
+        display: relative;
+        margin-top: 0px;
+        left: 0px;
+        top: 0px;
+        padding: 5px;
+        color: green;
+        background-color: white;
+        border-radius: 15px;
+    }
+    .hp{
+        margin-left: 18px;
+    }
+
+    .img{
+        margin-left: -10px;
+    }
+    
+    .defense{
+        margin-left: -8px;
+    }
+    #inputdef{
+        margin-left: 5px;
+    }
+    #inputatk{
+        margin-left: 9px;
+    }
+}
+
+@media screen and (min-width: 720px){
+    .container form{
+        display: flex;
+        flex-direction: column;
+        margin-left: 0px;
+        margin-right: 0px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        padding-left: 100px;
+        padding-right: 100px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+    .button{
+        position: relative;
+        text-align: center;
+        left: -250px;
+        width: 80px;
+        height: 40px;
+        font-size: 12px;
+    }
+}

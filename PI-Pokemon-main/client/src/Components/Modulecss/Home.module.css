@@ -126,6 +126,7 @@
 @media screen and (max-width: 720px){
     .container h1{
         margin-top: 20px;
+        font-size: 30px;
     }
     .filters{
         justify-content: space-evenly;

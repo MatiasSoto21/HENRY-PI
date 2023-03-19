@@ -154,13 +154,13 @@ const CreatePokemon = () => {
         </div>
         <div>
           <label>SpAttack:</label>
-          <input onChange={e => handleInputChange(e)} type='range' min='1' max='999' value={input.specialAttack} name='specialAttack' />
+          <input id={styles.inputatk} onChange={e => handleInputChange(e)} type='range' min='1' max='999' value={input.specialAttack} name='specialAttack' />
           <span>{input.specialAttack}</span>
           {errors.specialAttack && <p>*{errors.specialAttack}</p>}
         </div>
         <div>
           <label>SpDefense:</label>
-          <input onChange={e => handleInputChange(e)} type='range' min='1' max='999' value={input.specialDefense} name='specialDefense' />
+          <input id={styles.inputdef} onChange={e => handleInputChange(e)} type='range' min='1' max='999' value={input.specialDefense} name='specialDefense' />
           <span>{input.specialDefense}</span>
           {errors.specialDefense && <p>*{errors.specialDefense}</p>}
         </div>
@@ -171,14 +171,14 @@ const CreatePokemon = () => {
               <option key={e.id} value={e.name}>{e.name[0].toUpperCase() + e.name.substring(1)}</option>)}
           </select>
           {input.types?.map((e, i) =>
-            <div style={{ display: "inline", margin: "5px" }} key={i}>
+            <div className={styles.typediv} style={{ display: "inline", margin: "5px" }} key={i}>
               <p className={styles.ptypes}>{e[0].toUpperCase() + e.substring(1)}</p>
               <button id={styles.delete} type='reset' onClick={() => handleDelete(e)} >X</button>
             </div>
           )}
           {errors.types && <p>*{errors.types}</p>}
         </div>
-        {!errors.specialAttack && !errors.specialDefense && !errors.attack && !errors.defense && !errors.speed && !errors.height && !errors.weight && !errors.hp && !errors.name && input.types.length > 0 ? <button id={styles.create} type='submit'>Create</button> : <p>*All Fields Must Be Completed Except Img</p>}
+        {!errors.specialAttack && !errors.specialDefense && !errors.attack && !errors.defense && !errors.speed && !errors.height && !errors.weight && !errors.hp && !errors.name && input.types.length > 0 ? <button id={styles.create} type='submit'>Create!</button> : <p>*All Fields Must Be Completed Except Img</p>}
       </form>
 
     </div>
