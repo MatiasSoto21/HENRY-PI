@@ -133,10 +133,12 @@
     .detail{
         padding-top: 10px;
         flex-wrap: wrap;
-        margin-left: 50px;
-        margin-top: 50px;
-        margin-right: 50px;
+        margin-left: 100px;
+        margin-top: 20px;
+        margin-right: 100px;
         margin-bottom: 400px;
+        padding-right: 10px;
+        padding-left: 10px;
     }
     .pokeball{
         margin-bottom: 10px;
@@ -147,7 +149,15 @@
     }
     .button{
     margin-bottom: 0px;
-    margin-top: 300px;
+    margin-top: 1000px;
     }
 
+    .lospe{
+        margin-right: 40px;
+    }
+
+    .loading img{
+        width: 432px;
+        height: 287,2px;
+    }
 }
