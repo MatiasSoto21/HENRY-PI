@@ -171,7 +171,7 @@ const CreatePokemon = () => {
               <option key={e.id} value={e.name}>{e.name[0].toUpperCase() + e.name.substring(1)}</option>)}
           </select>
           {input.types?.map((e, i) =>
-            <div className={styles.typediv} style={{ display: "inline", margin: "5px" }} key={i}>
+            <div className={styles.typediv} style={{ display: "flex", margin: "5px" }} key={i}>
               <p className={styles.ptypes}>{e[0].toUpperCase() + e.substring(1)}</p>
               <button id={styles.delete} type='reset' onClick={() => handleDelete(e)} >X</button>
             </div>

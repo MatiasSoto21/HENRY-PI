@@ -55,7 +55,7 @@ const Home = () => {
             <FilterCreation />
           </div>
           <div className={styles.orders}>
-            <div>
+            <div className={styles.sortespacio}>
               Sort By<select onChange={e => handleOrderByName(e)}>
                 <option value="A-Z">A-Z</option>
                 <option value="Z-A">Z-A</option>

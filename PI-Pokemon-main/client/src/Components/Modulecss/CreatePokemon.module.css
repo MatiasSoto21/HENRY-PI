@@ -11,7 +11,7 @@
 }
 
 .container p{
-    display: inline;
+    display: list-item;
     font-size: medium;
     color: rgb(163, 1, 1);
 }
@@ -113,6 +113,8 @@
 
 #create:hover{
     cursor: pointer;
+    transform: scale(1.1);
+    background-color: whitesmoke;
 }
 
 #delete{
@@ -132,7 +134,7 @@
     background-color: rgb(173, 1, 1);
 }
 
-@media screen and (min-width: 360px){
+@media screen and (min-width: 360px) and (max-width: 720px) {
     .container form{
         display: flex;
         flex-direction: column;
@@ -206,8 +208,8 @@
         color: white;
         padding: 2px;
         background-color: red;
-        margin-top: -17px;
-        margin-left: 88px;
+        margin-top: 10px;
+        margin-left: 0px;
         width: 15px;
         height: 18px;
         font-size: 10px;
@@ -244,25 +246,80 @@
     }
 }
 
-@media screen and (min-width: 720px){
+
+@media screen and (min-width: 768px) and (max-width: 1023px){
     .container form{
-        display: flex;
-        flex-direction: column;
         margin-left: 0px;
-        margin-right: 0px;
-        margin-top: 20px;
-        margin-bottom: 20px;
-        padding-left: 100px;
-        padding-right: 100px;
+        padding: 0px;
+        padding-left: 0px;
         padding-top: 20px;
-        padding-bottom: 20px;
+        padding-right: 00px;
+        margin-right: 0px;
+        margin-bottom: 40px;
+    }
+    .container label {
+        margin-left: 30px;
+    }
+    .container p{
+        margin-left: 40px;
+        margin-top: 5px;
+    }
+    .container div{
+        width: 650px;
     }
     .button{
         position: relative;
-        text-align: center;
         left: -250px;
-        width: 80px;
-        height: 40px;
-        font-size: 12px;
+    }
+    #delete{
+        margin-left: 30px;
+        margin-top: 30px;
+        width: 23px;
+        height: 28px;
+        font-size: 16px;
+    }
+    #create{
+        font-size: xx-large;
+        margin-top: 0px;
+        left: 250px;
+        top: 0px;
+        padding: 15px;
+        color: green;
+        background-color: white;
+        border-radius: 15px;
+    }
+}
+
+@media screen and (min-width: 1024px){
+    .ptypes{
+        width: 60px;
+        height: 17px;
+        margin-top: 15px;
+        padding: 12px;
+    }
+
+    #delete{
+        margin-top: 20px;
+        margin-left: 20px;
+        width: 18px;
+        height: 22px;
+        font-size: 14px;
+        bottom: 0px;
+        right: 0px;
+    }
+
+    .container form{
+        margin-bottom: 90px;
+        padding-bottom: 0px;
+    }
+    #create{
+        font-size: xx-large;
+        margin-top: 0px;
+        left: 250px;
+        top: 0px;
+        padding: 15px;
+        color: green;
+        background-color: white;
+        border-radius: 15px;
     }
 }
