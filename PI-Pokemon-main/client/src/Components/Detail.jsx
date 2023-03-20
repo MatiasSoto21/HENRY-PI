@@ -9,7 +9,6 @@ const Detail = (props) => {
 
   const dispatch = useDispatch();
   const pokemonDetail = useSelector(state => state.detail)
-  console.log("pokemon detalle", pokemonDetail[0]);
   useEffect(() => {
     dispatch(getPokemonDetail(props.match.params.id));
     return () => {

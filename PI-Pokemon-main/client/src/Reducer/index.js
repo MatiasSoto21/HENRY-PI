@@ -97,7 +97,6 @@ const rootReducer = (state = initialState, action) => {
             state.allPokemons.filter(e => e.name.toLowerCase().includes(action.payload.toLowerCase()))
             :
              "Pokemon not found"
-             console.log("filtro", filtro);
             return {
                 ...state,
                 pokemons: filtro
