@@ -56,13 +56,13 @@ const Home = () => {
           </div>
           <div className={styles.orders}>
             <div className={styles.sortespacio}>
-              Sort By<select onChange={e => handleOrderByName(e)}>
+              Sort By <select onChange={e => handleOrderByName(e)}>
                 <option value="A-Z">A-Z</option>
                 <option value="Z-A">Z-A</option>
               </select>
             </div>
             <div>
-              Sort By<select onChange={e => handleOrder(e)}>
+              Sort By <select onChange={e => handleOrder(e)}>
                 <option value="max">➕Attack</option>
                 <option value="min">➖Attack</option>
               </select>
