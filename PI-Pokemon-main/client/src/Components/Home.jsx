@@ -47,7 +47,7 @@ const Home = () => {
   return (
     <div>
       {allPokemons.length > 0 ?
-        <div className={styles.container}>
+        <div className={styles.container} style={{ backgroundImage: "url('/32284075_7921445.jpg')" }} >
           <Link to='/pokemons'> <button className={styles.buttonCreate}>Create your Pokemon!</button> </Link>
           <h1>- PokeFind -</h1>
           <div className={styles.filters}>
