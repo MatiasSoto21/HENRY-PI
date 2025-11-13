@@ -1,5 +1,5 @@
 .container{
-    background-image: url("/32284075_7921445.jpg");
+    background-image: url("./public/32284075_7921445.jpg");
     background-size: cover;
     overflow-y: scroll;
     width: 100%;
